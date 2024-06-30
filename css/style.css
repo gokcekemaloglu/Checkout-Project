@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*? CSS Variables */
+
+:root{
+    --orange: #ff7623;
+    --orange-light: #f2994a;
+    --orange-dark: orangered;
+    --gray-light: #f5f5f5;
+    --gray-medium: #bdbdbd;
+    --fume: #4e5150;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--gray-light);
+}
+
+/** Header **/
+
+header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--orange-dark);
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+/*? Global Icons */
+
+i{
+    color: var(--orange);
+    padding: 0.5rem;    
+}
+
+i:hover{
+    border-radius: 50%;
+    color: white;
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+/** NAV */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 1rem;
+}
+
+nav .my-cart{
+    padding: 1rem;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ??? neden yapıldı? */
+
+nav .my-cart span {
+    font-weight: 100;
+    color: var(--gray-medium);
+}
+
+nav .delete-div{
+    color: var(--orange);
+    font-size: 14px;
+}
+
+/** Main  **/
+
+main{
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    max-width: 1200px;
+    gap: 1rem 4rem;
+}
+
+section{
+    border-radius: 10px;
+    background-color: white;
+}
+
+main .product-list {
+    flex: 4;
+}
+
+main .product-list .store{
+    border-bottom: 2px solid var(--gray-light);
+    padding: 1.2rem 0.5rem;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+/*? silinince ekleniyor */
+
+main .product-list .no-product {
+    text-align: center;
+    padding: 1rem;
+    color: var(--orange-dark);
+    font-size: 20px;
+}
+
+main .product {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 2px solid var(--gray-light);
+}
+
+main .products .product img{
+    width: 120px;
+    height: 120px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 5px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.product-info h2{
+    color: var(--fume);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-prices strong{
+    color: var(--orange-light);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.product-prices .line-through{
+    font-size: 12px;
+    text-decoration: line-through
+}
+
+.dollar::before{
+    content: "$";
+}
+
+main .buttons-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+main .buttons-div .plus-minus{
+    border: 1px solid var(--gray-light);
+    border-radius: 50px;
+    display: inline-block;
+}
+
+main .buttons-div i {
+    margin: 0.5rem;
+}
+
+main .buttons-div .dollar {
+    font-weight: 600;
+}
+
+/*? ---- Product List section --- */
+
+main .price-table{
+    padding: 2rem;
+    border: 1px solid var(--gray-medium);
+
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+    max-height: 250px;
+}
+
+main .price-table .total-prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .price-table h4{
+    color: var(--orange-dark);
+}
+
+main .price-table .total-prices .finish-btn{
+    background-color: var(--orange-dark);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;    
+}
+
+main .total-info{
+    margin-top: 1rem;
+}
+
+main .total-info .text-div{
+    display: flex;
+    justify-content: space-between;
+    color: var(--fume);
+}
+
+/*! ------ RESPONSIVE ------- */
+
+@media only screen and (max-width: 800px) {
+    main {
+      flex-direction: column;
+    }
+    main .price-table {
+      flex: 1;
+    }
+    main .price-table .total-prices {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    main .price-table .total-prices {
+      flex-direction: column;
+    }
+    main .buttons-div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    main .buttons-div i {
+      margin: 0.2rem;
+    }
+    main .buttons-div .dollar {
+      margin-top: 1rem;
+      font-size: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    main .product img {
+      width: 100px;
+      height: 100px;
+    }
+    main .buttons-div i {
+      margin: 0.1rem;
+    }
+  }
+  
+
+
+
